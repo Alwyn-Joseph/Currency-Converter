@@ -1,0 +1,28 @@
+<form class="form">
+    <h2 class="form__title">Currency Converter</h2>
+    <div class="form__group">
+        <label for="base-currency" class="form__label">Base Currency:</label>
+        <input type="text" class="form__input" id="base-currency" name="baseCurrency" [(ngModel)]="baseCurrency">
+    </div>
+    <div class="form__group">
+        <label for="target-currency" class="form__label">Target Currency:</label>
+        <input type="text" class="form__input" id="target-currency" name="targetCurrency" [(ngModel)]="targetCurrency">
+    </div>
+    <div class="form__group">
+        <label for="amount" class="form__label">Amount:</label>
+        <input type="number" class="form__input" id="amount" name="amount" [(ngModel)]="amount">
+    </div>
+    <button type="button" class="form__button" (click)="getExchangeRates()">Get Exchange Rates</button>
+    <h2 class="form__title">Exchange Rate is <span>{{exchangeRate}}</span></h2>
+    <button type="button" class="form__button" (click)="convertCurrency()">Convert</button>
+    <h2 class="form__title">Convert Value is <span>{{convertCurrencyValue}}</span></h2>
+
+</form>
+<div *ngIf="isLoading" class="overlay">
+    <div class="spinner"></div>
+</div>
+
+<app-modal *ngIf="showModal" (okBtnPressed)="onOkBtnPress()" [content]=content></app-modal>
+
+<!-- Overlay -->
+<div id="overlay"></div>
