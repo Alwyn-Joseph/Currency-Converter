@@ -1,5 +1,7 @@
 # CurrencyConverter
 
+Access the application here:- https://currency-converter-aj.web.app
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Development server
